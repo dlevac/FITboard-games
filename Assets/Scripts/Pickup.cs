@@ -2,19 +2,11 @@
 using System.Collections;
 
 public class Pickup : MonoBehaviour {
+    private static int totalCollected = 0;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-    // When this pickup is touched by another collider, destroy this pickup.
+    // When this pickup is touched by another collider, destroy this pickup and increase the count
     void OnTriggerEnter(Collider other) {
+        ++totalCollected;
         Destroy(gameObject);
     }
 }

@@ -5,7 +5,7 @@ public class Ball : MonoBehaviour {
     // Stores/caches rigidbody for ease of access.
     private new Rigidbody rigidbody;
 
-    // Force applied to ball on push, set in Unity editor.
+    // Force applied to ball on push, configurable in Unity editor.
     [SerializeField]
     private float pushForce;
 
@@ -18,13 +18,6 @@ public class Ball : MonoBehaviour {
 	void Update () {
         Push();
 	}
-
-    // called when this object enters a Trigger collider
-    void OnTriggerEnter(Collider other) {
-        //TODO score counter?
-        // temporary console logging just to show it works
-        Debug.Log("Ball logs collision");
-    }
 
     /// <summary>
     /// Detect input to push the ball.
